@@ -74,4 +74,5 @@ cdc_total_space_in_mb: #(min 4096)
 ```
 И у необходимой таблицы указать cdc = true при создании или через ALTER TABLE.
 
-
+#Kafka - Clickhouse
+Для этого использован flink-clickhouse-sink от Ivi: https://github.com/ivi-ru/flink-clickhouse-sink
