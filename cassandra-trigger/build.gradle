@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.0'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+
+
+group = 'hide42.Cassandra-trigger'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+
+    maven { url "https://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'org.apache.kafka', name: 'connect-api', version: '1.0.0'
+    compile group: 'org.apache.kafka', name: 'connect-runtime', version: '1.0.0'
+    compile group: 'org.apache.cassandra', name: 'cassandra-all', version: '3.0.16'
+}
+
+shadowJar {
+    zip64 true
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
+}
