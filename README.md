@@ -1,4 +1,4 @@
-1) Имеется 2 основых способа извлечения данных из кассандры: через cdc или trigger.
+Имеется 2 основых способа извлечения данных из кассандры: через cdc или trigger.
 
 
  Trigger является depricated, но cdc доступен только с версии 3.8, так что в первую очередь необходимо проверить версию cassandra на прод/конечном сервере.
@@ -41,7 +41,7 @@ CREATE TRIGGER kafka_trigger ON movies_by_genre USING '<path-to-class-in-project
 ```
 Так если класс у вас в папке java, то просто пишите имя класса.
 
-#CDC(change data capture):
+# CDC(change data capture):
 Cassandra будет писать журналы событий, которые вы можете потом читать через имплиментацию [CommitLogReadHandler](https://github.com/apache/cassandra/blob/trunk/src/java/org/apache/cassandra/db/commitlog/CommitLogReader.java)
 
 ```java
@@ -77,5 +77,5 @@ cdc_total_space_in_mb: #(min 4096)
 ```
 И у необходимой таблицы указать cdc = true при создании или через ALTER TABLE.
 
-#Kafka - Clickhouse
+# Kafka - Clickhouse
 Для этого можете использовать flink-clickhouse-sink от Ivi: https://github.com/ivi-ru/flink-clickhouse-sink
