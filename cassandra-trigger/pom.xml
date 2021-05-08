@@ -21,7 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <source.level>1.8</source.level>
         <code.level>1.8</code.level>
-        <version.cassandra-all>3.0.16</version.cassandra-all>
+        <version.cassandra-all>3.0.22</version.cassandra-all>
         <version.kafka>1.0.0</version.kafka>
         <version.plugin.compiler>3.5.1</version.plugin.compiler>
         <version.plugin.install>2.5.2</version.plugin.install>
